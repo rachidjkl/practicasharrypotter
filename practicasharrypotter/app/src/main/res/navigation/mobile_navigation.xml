@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_user">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.practicasharrypotter.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_home_detalles2"
+            app:destination="@id/navigation_home_detalles2">
+            <argument
+                android:name="character"
+                app:argType="com.example.practicasharrypotter.data.model.Characters" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_books"
+        android:name="com.example.practicasharrypotter.ui.books.BooksFragment"
+        android:label="@string/title_books"
+        tools:layout="@layout/fragment_books" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_user"
+        android:name="com.example.practicasharrypotter.ui.user.UserFragment"
+        android:label="@string/title_user"
+        tools:layout="@layout/fragment_user" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_home_detalles2"
+        android:name="com.example.practicasharrypotter.ui.home.HomeDetallesFragment2"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home_detalles2" >
+
+        <action
+            android:id="@+id/action_navigation_home_detalles2_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+</navigation>
