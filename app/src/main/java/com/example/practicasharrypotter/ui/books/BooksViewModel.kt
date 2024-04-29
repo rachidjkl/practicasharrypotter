@@ -16,10 +16,12 @@ import javax.inject.Inject
 class BooksViewModel : ViewModel() {
 
     var booksModel = MutableLiveData<List<Books>?>()
+    var isLoading = MutableLiveData<Boolean>()
     var getBooksUseCase = GetBooksUseCase()
 
     fun onCreate() {
         viewModelScope.launch {
+            isLoading.postValue(true)
             var result = emptyList<Books>()
             var idioma = "en"
             if (idioma == "es"){
@@ -30,6 +32,7 @@ class BooksViewModel : ViewModel() {
 
             if(!result.isNullOrEmpty()){
                 booksModel.postValue(result)
+                isLoading.postValue(false)
             }
         }
     }

@@ -18,10 +18,12 @@ class HomeViewModel  : ViewModel()  {
 
 
     val charactersModel = MutableLiveData<List<Characters>?>()
+    val isLoading = MutableLiveData<Boolean>()
     var getCharactersUseCase = GetCharactersUseCase()
 
     fun onCreate() {
         viewModelScope.launch {
+            isLoading.postValue(true)
             var result = emptyList<Characters>()
             var idioma = "en"
             if (idioma == "es"){
@@ -32,6 +34,7 @@ class HomeViewModel  : ViewModel()  {
 
             if(!result.isNullOrEmpty()){
                 charactersModel.postValue(result)
+                isLoading.postValue(false)
             }
         }
     }

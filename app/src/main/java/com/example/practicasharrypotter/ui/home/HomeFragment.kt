@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
 import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -45,8 +46,9 @@ class HomeFragment : Fragment(){
             binding.RecyclerView.layoutManager = gridLayoutManager
             binding.RecyclerView.adapter = adapter
         })
-
-        val filteredList = mutableListOf<Characters>()
+        homeViewModel.isLoading.observe(viewLifecycleOwner, Observer {
+             binding.progressBar.isVisible = it
+        })
 
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {

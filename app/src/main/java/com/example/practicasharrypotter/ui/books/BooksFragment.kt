@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.activity.viewModels
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -44,6 +45,10 @@ class BooksFragment : Fragment() {
             val gridLayoutManager = GridLayoutManager(requireContext(), 2) // 2 es el número de columnas en la cuadrícula
             binding.RecyclerView.layoutManager = gridLayoutManager
             binding.RecyclerView.adapter = adapter
+        })
+
+        booksViewModel.isLoading.observe(viewLifecycleOwner, Observer {
+            binding.progressBar.isVisible = it
         })
 
         binding.btnOrder.setOnClickListener {
