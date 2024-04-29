@@ -11,8 +11,8 @@ import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import javax.inject.Inject
 
-@HiltViewModel
 class BooksViewModel : ViewModel() {
 
     var booksModel = MutableLiveData<List<Books>?>()

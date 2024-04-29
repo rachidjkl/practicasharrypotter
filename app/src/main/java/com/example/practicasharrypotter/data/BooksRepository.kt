@@ -5,7 +5,7 @@ import com.example.practicasharrypotter.data.model.BooksProveider
 import com.example.practicasharrypotter.data.network.Service
 import javax.inject.Inject
 
-class BooksRepository @Inject constructor(){
+class BooksRepository {
     private val api = Service()
 
     suspend fun getAllBooksEs():List<Books>{

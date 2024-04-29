@@ -8,10 +8,13 @@ import com.example.practicasharrypotter.data.model.Books
 import com.example.practicasharrypotter.data.model.Characters
 import com.example.practicasharrypotter.dominio.GetBooksUseCase
 import com.example.practicasharrypotter.dominio.GetCharactersUseCase
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 
-class HomeViewModel : ViewModel() {
+
+class HomeViewModel  : ViewModel()  {
 
 
     val charactersModel = MutableLiveData<List<Characters>?>()

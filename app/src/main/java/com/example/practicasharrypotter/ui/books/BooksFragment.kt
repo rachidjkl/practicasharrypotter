@@ -16,7 +16,7 @@ import com.example.practicasharrypotter.data.model.Books
 import com.example.practicasharrypotter.databinding.FragmentBooksBinding
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
+
 class BooksFragment : Fragment() {
 
     private var _binding: FragmentBooksBinding? = null

@@ -6,7 +6,7 @@ import com.example.practicasharrypotter.data.model.Books
 import com.example.practicasharrypotter.data.model.Characters
 import javax.inject.Inject
 
-class GetCharactersUseCase @Inject constructor(){
+class GetCharactersUseCase {
 
     private val repository = CharactersRepository()
 

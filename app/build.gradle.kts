@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id ("androidx.navigation.safeargs.kotlin")
+    kotlin("kapt")
 }
 
 android {
@@ -53,7 +54,7 @@ dependencies {
     implementation ("androidx.navigation:navigation-fragment-ktx:2.4.0-alpha06")
     implementation ("androidx.navigation:navigation-ui-ktx:2.4.0-alpha06")
     // Fragment
-    implementation ("androidx.fragment:fragment-ktx:1.3.2")
+    implementation ("androidx.fragment:fragment-ktx:1.6.2")
     // Activity
     implementation ("androidx.activity:activity-ktx:1.2.2")
     // ViewModel
@@ -66,11 +67,15 @@ dependencies {
     //Corrutinas
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.6")
     //Dagger
-    implementation ("com.google.dagger:hilt-android:2.35")
+    implementation ("com.google.dagger:hilt-android:2.44")
+    kapt("com.google.dagger:hilt-android-compiler:2.44")
     implementation ("com.github.bumptech.glide:glide:4.12.0")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+}
+kapt {
+    correctErrorTypes = true
 }

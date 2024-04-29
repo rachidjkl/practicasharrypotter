@@ -6,7 +6,7 @@ import com.example.practicasharrypotter.data.model.CharactersProveider
 import com.example.practicasharrypotter.data.network.Service
 import javax.inject.Inject
 
-class CharactersRepository @Inject constructor(){
+class CharactersRepository {
     private val api = Service()
 
     suspend fun getAllCharactersEs():List<Characters>{

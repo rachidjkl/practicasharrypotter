@@ -7,7 +7,7 @@ import java.util.Date
 import java.util.Locale
 import javax.inject.Inject
 
-class GetBooksUseCase @Inject constructor() {
+class GetBooksUseCase {
 
     private val repository = BooksRepository()
 
